@@ -96,7 +96,7 @@ function answerLove(answer) {
 
   if (answer === "yes") {
     showModal(
-      "Awww... I knew it! 🥹❤️\nI love you too, meri jaan.",
+      "Awww... I knew it! 🥹❤️\nI love you too, Babes.",
       "💗",
       () => showPage("page-2")
     );
