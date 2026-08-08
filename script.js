@@ -102,8 +102,8 @@ function answerLove(answer) {
     );
   } else {
     showModal(
-      "Karamjali, merko pyaar nahi karti ho? 😭\nAgar haan to Yes karo na! 🥺❤️",
-      "🥺",
+      "tumara sar fod dunga agar na karogi to 😭\nchalo chup chap haan karo! 😒❤️",
+      "😒",
       null
     );
   }
@@ -113,7 +113,7 @@ function checkDate() {
   const selected = document.getElementById("meet-date").value;
 
   if (!selected) {
-    showModal("Date select karo na madam ji 🥺❤️", "📅", null);
+    showModal("Date select karo na madam ji 😒❤️", "📅", null);
     return;
   }
 
@@ -121,13 +121,13 @@ function checkDate() {
 
   if (selected === "2025-10-02") {
     showModal(
-      "Acchaaa... yaad hai tumko! 🥹❤️\nGood girl!",
+      "Acchaaa... yaad hai tumko! ❤️\nGood girl!",
       "🥰",
       () => showPage("page-3")
     );
   } else {
     showModal(
-      "Let's break up 😭\nMujhe nahi karni baat ab! 👶🏻💔",
+      "Let's break up 😭\nMujhe baat hi nahi karni ab! 💔",
       "😭",
       null
     );
@@ -139,7 +139,7 @@ function chooseMeeting(answer) {
 
   if (answer === "2026-10-02") {
     showModal(
-      "Thank you for fixing a date with me! 🥹🌹\nI'm waiting already ❤️",
+      "Thank you Janeman! 💕 for fixing a date! 🥹🌹\n by the way I'm waiting already ❤️",
       "🌹",
       () => showPage("page-4")
     );
