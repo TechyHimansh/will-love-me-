@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just For You ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="floating-bg" aria-hidden="true"></div>
+
+  <main class="app">
+    <section id="page-1" class="page active">
+      <div class="card">
+        <div class="emoji">💗</div>
+        <h1>Do you love me?</h1>
+        <p class="subtitle">Be honest... I already know the answer 😌</p>
+        <div class="buttons">
+          <button class="btn yes" onclick="answerLove('yes')">Yes ❤️</button>
+          <button class="btn no" onclick="answerLove('no')">No 🙈</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-2" class="page">
+      <div class="card">
+        <div class="emoji">🥰</div>
+        <h1>Chalo batao...</h1>
+        <p class="question">Hum kab mile the?</p>
+        <input id="meet-date" class="date-input" type="date" />
+        <button class="btn yes full" onclick="checkDate()">Submit 💕</button>
+      </div>
+    </section>
+
+    <section id="page-3" class="page">
+      <div class="card">
+        <div class="emoji">🌹</div>
+        <h1>Acha ye batao...</h1>
+        <p class="question">Kab milogi? ❤️</p>
+        <div class="buttons stacked">
+          <button class="btn yes full" onclick="chooseMeeting('2026-10-02')">2 Oct 2026 💕</button>
+          <button class="btn no full" onclick="chooseMeeting('unknown')">Pta nahi 🙈</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-4" class="page final-page">
+      <div class="card">
+        <div class="big-heart">❤️</div>
+        <h1>I Love You!</h1>
+        <p class="subtitle">Always. More than you know. 🥹💕</p>
+        <div class="love-note">
+          <span>Made with love,</span>
+          <strong>just for you ❤️</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div id="modal-emoji" class="modal-emoji">💗</div>
+      <p id="modal-message"></p>
+      <button id="modal-button" class="btn yes full">Okay ❤️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

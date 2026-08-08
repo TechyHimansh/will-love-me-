@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #e95d86;
+  --dark-pink: #c83f68;
+  --cream: #fff7f2;
+  --text: #5d3342;
+  --soft: #ffe3ec;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #fff8f5, #ffe9ef);
+}
+
+#floating-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-item {
+  position: absolute;
+  opacity: 0.28;
+  animation: float 8s ease-in-out infinite;
+  user-select: none;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  max-width: 620px;
+  animation: fadeIn 0.45s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.91);
+  border: 1px solid rgba(255, 150, 180, 0.28);
+  border-radius: 30px;
+  padding: 44px 34px;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(170, 73, 101, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.emoji {
+  font-size: 56px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 8px 0 12px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 10vw, 72px);
+  font-weight: 400;
+  color: var(--dark-pink);
+  line-height: 1.05;
+}
+
+.subtitle, .question {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 auto 28px;
+}
+
+.question {
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.buttons.stacked {
+  flex-direction: column;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.btn.yes {
+  color: white;
+  background: linear-gradient(135deg, #ef6d93, #d94b75);
+  box-shadow: 0 10px 25px rgba(217, 75, 117, .25);
+}
+
+.btn.no {
+  color: #9a4d64;
+  background: #ffe3eb;
+}
+
+.full {
+  width: 100%;
+}
+
+.date-input {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto 18px;
+  padding: 15px 17px;
+  border: 2px solid #f4c4d2;
+  border-radius: 16px;
+  background: #fffafc;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.date-input:focus {
+  border-color: var(--pink);
+}
+
+.final-page .card {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.big-heart {
+  font-size: 92px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.love-note {
+  margin-top: 30px;
+  display: grid;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.love-note strong {
+  color: var(--dark-pink);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(76, 31, 45, .28);
+  backdrop-filter: blur(5px);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-box {
+  width: min(470px, 100%);
+  background: #fffafa;
+  border-radius: 28px;
+  padding: 34px 28px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(76, 31, 45, .25);
+  animation: pop .25s ease;
+}
+
+.modal-emoji {
+  font-size: 58px;
+  margin-bottom: 12px;
+}
+
+.modal-box p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 0 24px;
+  white-space: pre-line;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-24px) rotate(5deg); }
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 34px 22px;
+    border-radius: 24px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
